@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="column-xs-12">
-      <button class="btn btn-primary" (click)="toggleParagraph($event)"> Display Details </button>
+      <button class="btn btn-primary" (click)="toggleParagraph()"> Display Details </button>
       <p *ngIf="showParagraph">Secret Password = tuna</p>
-      <p *ngFor="let click of clicks"
-         [ngStyle]="{backgroundColor:getColorBefore5()}"
-         [ngClass]="{online: count >= 5}">{{click}}</p>
+      <div *ngFor="let click of clicks"
+         [ngStyle]="{backgroundColor:click >= 5 ? 'blue' : 'transparent'}"
+         [ngClass]="{online: click >= 5}">{{click}}</div>
     </div>
   </div>
 </div>

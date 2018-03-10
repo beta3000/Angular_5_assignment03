@@ -14,13 +14,13 @@ export class AppComponent {
   clicks = [];
   count = 0;
 
-  toggleParagraph(event: Event) {
+  toggleParagraph() {
     this.showParagraph = !this.showParagraph;
-    this.clicks.push(event.timeStamp);
     this.count++;
+    this.clicks.push(this.count);
   }
 
   getColorBefore5() {
-    return this.count >= 5 ? 'blue' : '';
+    return this.count >= 5 ? 'blue' : 'transparent';
   }
 }
