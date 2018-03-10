@@ -1,10 +1,26 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styles: [`
+    .online {
+      color: white;
+    }
+  `]
 })
 export class AppComponent {
-  title = 'app';
+  showParagraph = false;
+  clicks = [];
+  count = 0;
+
+  toggleParagraph(event: Event) {
+    this.showParagraph = !this.showParagraph;
+    this.clicks.push(event.timeStamp);
+    this.count++;
+  }
+
+  getColorBefore5() {
+    return this.count >= 5 ? 'blue' : 'red';
+  }
 }
