@@ -21,6 +21,6 @@ export class AppComponent {
   }
 
   getColorBefore5() {
-    return this.count >= 5 ? 'blue' : 'red';
+    return this.count >= 5 ? 'blue' : '';
   }
 }
